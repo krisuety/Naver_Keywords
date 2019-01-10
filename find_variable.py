@@ -5,12 +5,13 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
 import pandas as pd
 import pickle
-import requests, json, sys
+import requests, json, sys, os
 
 def fine_variable(alpha):
-
+    path = os.path.dirname(os.path.realpath(__file__))
     # 기사 데이터 프레임 로드
-    article_df = pd.read_pickle("article_2016-06-01.plk")
+    print(path)
+    article_df = pd.read_pickle("{}/article_2016-06-01.plk".format(path))
 
     # 테스트 데이터와 트레인 데이터 분리
     X_train, X_test, y_train, y_test = train_test_split(article_df.content, article_df.category, test_size=0.1, random_state=1)
