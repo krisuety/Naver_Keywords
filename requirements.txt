@@ -3,6 +3,6 @@ numpy
 pandas
 mysqlclient
 sqlalchemy
-pymongo==2.8.1
+pymongo==4.6.3
 scikit-learn==0.19.1
 scipy
